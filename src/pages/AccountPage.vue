@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+// import { onMounted } from "vue";
 import { useAccountStore } from "src/stores/accounts";
 
 const accStore = useAccountStore();
@@ -59,9 +59,9 @@ const formatDate = (dateString) => {
 };
 
 // Ходим за данными перед загрузкой страницы
-onMounted(() => {
-  if (accStore.rows.length <= 0) {
-    accStore.fetchAccountData();
-  }
-});
+// onMounted(() => {
+//   if (accStore.rows.length <= 0) {
+//     accStore.fetchAccountData();
+//   }
+// });
 </script>

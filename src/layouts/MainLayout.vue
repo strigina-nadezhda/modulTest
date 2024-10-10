@@ -36,6 +36,10 @@ import { useRequestStore } from "src/stores/requests";
 import { useRouter, useRoute } from "vue-router";
 import { watch } from "vue";
 
+import { useAccountStore } from "src/stores/accounts";
+
+const accStore = useAccountStore();
+
 const reqStore = useRequestStore();
 
 defineOptions({
@@ -77,4 +81,10 @@ const closeTab = (id) => {
     });
   }
 };
+
+onMounted(() => {
+  if (accStore.rows.length <= 0) {
+    accStore.fetchAccountData();
+  }
+});
 </script>
