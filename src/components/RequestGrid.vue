@@ -20,6 +20,14 @@
       </q-td>
     </template>
 
+ <template v-slot:body-cell-stg="props">
+      <q-td :props="props">
+        <div v-for="item in props.row.stg" :key="item">
+          {{ item }}
+        </div>
+      </q-td>
+    </template>
+
     <!-- ячейка "удалить" -->
     <template v-slot:body-cell-delete="props">
       <q-td :props="props">
